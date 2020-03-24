@@ -41,7 +41,7 @@
       <div class="col-5 p-0 auth-form__container">
         <div>
           <select id="localeSelect" onchange="login.localeChanged()">
-            <option value="">Change language</option>
+            <option value="">[ Change language ]</option>
             #foreach( $locale in $availableLocales )
             <option value="${locale.language}">${locale.displayName}</option>
             #end
@@ -58,19 +58,17 @@
               <input id="j_password" name="j_password" autocomplete="off" class="input" placeholder=" " type="password"/>
               <label for="password" class="label">Password</label>
             </div>
-            <div class="mt-2">
+            <div class="my-2">
               <input type="checkbox" name="2fa" value="2fa" id="2fa">
               <label for="2fa">Login using two-factor authentication</label>
               <input type="code" id="2fa_code" name="2fa_code" placeholder="Two factor authentication code" hidden readonly >
             </div>
-            #if( $keyAccountRecovery )
-            <p><a id="forgotPasswordLink" href="recovery.action">Recover password</a></p>
-            #end
-            #if( $failed == true )
             <div class="form-error">
-               <img src="../images/icon-error.svg"/> $!{request.getSession().getAttribute("LOGIN_FAILED_MESSAGE")}
+              <img src="../images/icon-error.svg"/> Error message here
             </div>
-            #end
+            <!-- #if( $keyAccountRecovery )
+            <p><a id="forgotPasswordLink" href="recovery.action">Recover password</a></p>
+            #end -->
             <input class="btn btn-primary" value="Sign In" type="submit" />
             <!-- <div class="mt-2">
               <input type="checkbox" name="loggedin" id="stay-logged-in">

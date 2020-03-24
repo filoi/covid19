@@ -1,0 +1,47 @@
+.btn {
+  // reset initial styles
+  display: block;
+  border: none;
+  max-width: 290px;
+  width: 100%;
+  height: 48px;
+  transition: 300ms all;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  &.btn-primary {
+    background-color: $link-color;
+    border-color: $link-color;
+    color: white;
+    &:hover, &.hover {
+      background-color: $link-color-hover;
+    }
+    &:active, &.active {
+      background-color: $link-color-active;
+    }
+    &:disabled, &[disabled] {
+      background-color: #e7ecec;
+      border-color: #e7ecec;
+      color: #595e6f;
+    }
+  }
+  &.btn-secondary {
+    background-color: white;
+    border: 1px solid $link-color;
+    color: #4168e5;
+    &:hover, &.hover {
+      border-width: 2px;
+      border-color: #2147a5;
+    }
+    &:active, &.active {
+      border-width: 2px;
+      border-color: #112d71;
+    }
+    &:disabled, &[disabled] {
+      border-color: #595e6f;
+      color: #595e6f;
+      &:hover {
+        border-width: 1px;
+      }
+    }
+  }
+}
