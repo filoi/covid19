@@ -1,0 +1,46 @@
+// Bootstrap scss files
+// required for bootstrap
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+// optional
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/grid";
+
+$base-color: #141416;
+$link-color-active: #112d71;
+$link-color-hover: #2147a5;
+$link-color: #4168e5;
+
+$base-text-size: 16px;
+$small-text-size: 13px;
+
+@import '../scss/form';
+@import "../scss/buttons";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "HelvaticaNeue", "Helvatica", "Arial", sans-serif;
+  color: $base-color;
+  font-size: $base-text-size;
+}
+
+a {
+  color:$link-color;
+  &:link {
+    color: $link-color;
+  }
+  &:visited {
+    color: $link-color-active; 
+  }
+  &:hover {
+    color: $link-color-hover;
+  }
+  &:active {
+    color: $link-color-active;
+  }
+}
