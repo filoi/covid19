@@ -1,0 +1,22 @@
+{
+  "launch_path": "index.html",
+  "default_locale": "en",
+  "activities": {
+    "dhis": {
+      "href": "..",
+      "auth": "admin:district",
+      "devHref": "http://localhost:8080"
+    }
+  },
+  "appType": "APP",
+  "name": "DHIS2 event visualizer app",
+  "version": "33.0.0",
+  "description": "Event charts app",
+  "developer": {
+    "name": "DHIS2 visualization team"
+  },
+  "icons": {
+    "48": "icon.png"
+  },
+  "manifest_generated_at": "Thu Feb 20 2020 18:52:32 GMT+0000 (UTC)"
+}

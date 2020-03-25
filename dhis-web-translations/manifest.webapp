@@ -1,0 +1,24 @@
+{
+  "launch_path": "index.html",
+  "default_locale": "en",
+  "activities": {
+    "dhis": {
+      "href": ".."
+    }
+  },
+  "appType": "APP",
+  "name": "DHIS2 Translations App",
+  "version": "1.0.0-beta.1",
+  "description": "DHIS2 Translations App",
+  "icons": {
+    "48": "icon.png"
+  },
+  "developer": {
+    "url": "https://dhis2.github.io",
+    "name": "DHIS2"
+  },
+  "dhis2": {
+    "apiVersion": "30"
+  },
+  "manifest_generated_at": "Thu Feb 20 2020 19:05:25 GMT+0000 (UTC)"
+}
