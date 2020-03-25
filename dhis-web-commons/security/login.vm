@@ -32,7 +32,7 @@
       <div class="col-7 p-0 auth-banner">
         <div>
           <h1>$!encoder.htmlEncode( ${applicationTitle} )</h1>
-          <img src="./images/who-sea-intro-banner.png" alt="WHO SOUTH EAST ASIA PLATFORM BANNER" srcset="./images/who-sea-intro-banner@2x.png 2x, ./images/who-sea-intro-banner@3x.png 3x">
+          <img src="../images/who-sea-intro-banner.png" alt="WHO SOUTH EAST ASIA PLATFORM BANNER" srcset="../images/who-sea-intro-banner@2x.png 2x, ../images/who-sea-intro-banner@3x.png 3x">
         </div>
         <div>
           <p>Powered by <a href="http://www.dhis2.org">DHIS 2</a></p>
@@ -49,38 +49,26 @@
         </div>
         <div>
           <h2>Welcome</h2>
-          <form id="loginForm" action="../../dhis-web-commons-security/login.action" method="post">
+          <form>
             <div class="control">
-              <input id="j_username" name="j_username" class="input" placeholder=" " type="text" required />
+              <input id="j_username" id="j_username" class="input" placeholder=" " type="text" required />
               <label for="j_username" class="label">Username</label>
             </div>
             <div class="control">
               <input id="j_password" name="j_password" autocomplete="off" class="input" placeholder=" " type="password"/>
-              <label for="j_password" class="label">Password</label>
+              <label for="password" class="label">Password</label>
             </div>
             <div class="mt-2">
               <input type="checkbox" name="2fa" value="2fa" id="2fa">
               <label for="2fa">Login using two-factor authentication</label>
-              <div class="control" id="2fa-code-control">
-                <input type="code" class="input" id="2fa_code" name="2fa_code" placeholder=" " hidden readonly >
-                <label for="2fa_code" class="label">Two-factor authentication code</label>
-              </div>
+              <input type="code" id="2fa_code" name="2fa_code" placeholder="Two factor authentication code" hidden readonly >
             </div>
             #if( $keyAccountRecovery )
             <p><a id="forgotPasswordLink" href="recovery.action">Recover password</a></p>
             #end
             #if( $failed == true )
             <div class="form-error">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <g fill="none" fill-rule="evenodd">
-                      <circle cx="8" cy="8" r="8" fill="#E55441"/>
-                      <g fill="#FFF" transform="translate(7 3)">
-                          <path d="M0 0H2V6H0z"/>
-                          <circle cx="1" cy="9" r="1" stroke="#FFF"/>
-                      </g>
-                  </g>
-              </svg>
-              <span class="ml-2" id="#loginMessage">$!{request.getSession().getAttribute("LOGIN_FAILED_MESSAGE")}</span>
+               <img src="../images/icon-error.svg"/> $!{request.getSession().getAttribute("LOGIN_FAILED_MESSAGE")}
             </div>
             #end
             <input class="btn btn-primary" value="Sign In" type="submit" />

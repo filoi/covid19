@@ -5390,15 +5390,6 @@ label.label.is-required::after {
   /* added line */
 }
 
-.form-error {
-  height: 47px;
-  border-radius: 4px;
-  background-color: #fff2f0;
-  padding: 16px 16px;
-  margin-bottom: 8px;
-  line-height: 1;
-}
-
 .btn {
   display: block;
   border: none;
@@ -5470,10 +5461,6 @@ a:hover {
 }
 a:active {
   color: #112d71;
-}
-
-.is-hidden {
-  display: none;
 }
 
 /*# sourceMappingURL=base.css.map */
