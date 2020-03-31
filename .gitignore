@@ -1,11 +1,11 @@
 .DS_Store
 .vscode
-*
+/*
 dhis-web-*
-!dhis-web-commons
-!dhis-web-dataentry
-!icons
 node_modules
 WEB-INF
 META-INF
 
+!/dhis-web-commons
+!/dhis-web-dataentry
+!/icons
