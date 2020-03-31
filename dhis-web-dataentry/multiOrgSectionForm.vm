@@ -5,11 +5,11 @@ var organisationUnitList = JSON.parse( '$organisationUnits' );
 #set( $marker = 0 )
 #set( $tabIndex = 1 )
 #set( $hasAccess = $auth.hasAccess( "dhis-web-dataentry", "saveValue" ) )
-
 #foreach( $section in $sections )
     
     <div class="formSection sectionContainer">
-        <div class="cent"><h3>$encoder.htmlEncode( $section.displayName ) asdas </h3></div>
+        <div>multiOrgSectionForm.vm hi</div>
+        <div class="cent"><h3>$encoder.htmlEncode( $section.displayName )</h3></div>
         #set( $categoryComboIds = "null" )
     #set( $categoryComboIds = $sectionCombos.get( $section.id ) )
 

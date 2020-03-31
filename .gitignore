@@ -1,1 +1,11 @@
-dhis-web-commons/package.json
+.DS_Store
+.vscode
+*
+dhis-web-*
+!dhis-web-commons
+!dhis-web-dataentry
+!icons
+node_modules
+WEB-INF
+META-INF
+
