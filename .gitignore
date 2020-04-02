@@ -2,6 +2,7 @@
 .vscode
 /*
 dhis-web-*
+!*.png
 node_modules
 WEB-INF
 META-INF
