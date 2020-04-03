@@ -10,3 +10,5 @@ META-INF
 !/dhis-web-commons
 !/dhis-web-dataentry
 !/icons
+!/images
+!main.vm

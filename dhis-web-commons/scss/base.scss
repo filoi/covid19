@@ -8,13 +8,32 @@
 @import "../node_modules/bootstrap/scss/utilities";
 @import "../node_modules/bootstrap/scss/grid";
 
-$base-color: #141416;
-$link-color-active: #112d71;
-$link-color-hover: #2147a5;
-$link-color: #4168e5;
+$gray-900: #141416; 
+$gray-800: #202431;
+$gray-600: #444e59;
+$gray-500: #595e6f;
+$gray-400: #8e93a4;
+$gray-300: #dce4e8;
+$gray-290: #ebeff1;
+
+$blue-900: #112d71;
+$blue-700: #2147a5;
+$blue-600: #4168e5; 
+$blue-100: #eef3f9;
+
+$base-color: $gray-900;
+$link-color-active: $blue-900;
+$link-color-hover: $blue-700;
+$link-color: $blue-600;
 
 $base-text-size: 16px;
+$large-text-size: 20px;
 $small-text-size: 13px;
+
+$header-height: 58px;
+$sidebar-width: 314px;
+
+$page-left-padding: 54px;
 
 @import '../scss/form';
 @import "../scss/buttons";
@@ -48,3 +67,10 @@ a {
 .is-hidden {
   display: none;
 }
+
+@import 'sidebar';
+@import 'main-page';
+@import 'header';
+@import 'actions';
+@import 'alerts';
+@import 'tree';

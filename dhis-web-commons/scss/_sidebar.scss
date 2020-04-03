@@ -1,0 +1,81 @@
+#leftBar {
+  background-color: $gray-290;
+  width: $sidebar-width;
+  top: $header-height;
+  bottom: 0;
+  padding-top: 0;
+  div#orgUnitTree {
+     background-color: transparent;
+     border: none;
+     width: 100%;
+  }
+  .header {
+    height: $header-height;
+    background-color: $gray-300;
+    line-height: $header-height;
+    padding-left: 8px;
+    font-size: $base-text-size;
+    font-weight: normal;
+    color: $base-color;
+  }
+  .sidebar-search {
+    background-color: white;
+    padding: 8px;
+    .search-box {
+      background-color: $gray-290;
+      border-radius: 4px;
+      height: 40px;
+      input[type="text"] {
+        width: calc(100% - 39px);
+        border: none;
+        font-size: $base-text-size;
+        vertical-align: middle;
+        padding-left: 0;
+      }
+      input[type="button"] {
+        border: none;
+        height: 32px;
+        width: 35px;
+        vertical-align: middle;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjNTk1RTZGIiB0cmFuc2Zvcm09InJvdGF0ZSg0NSA3LjA0NiAxMC4xODIpIj4KICAgICAgICA8Y2lyY2xlIGN4PSI2IiBjeT0iNiIgcj0iNSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICAgICAgPHBhdGggZmlsbD0iI0Q4RDhEOCIgZD0iTTUuNDc4IDExLjA3OEg2LjQ3OFYxNy41NzhINS40Nzh6Ii8+CiAgICA8L2c+Cjwvc3ZnPg==);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+      }
+    }
+  }
+  #leftBarContents, div#orgUnitTreeContainer, #orgUnitTreeContainer, div#orgUnitTree {
+    height: calc(100% - #{$header-height});
+  }
+}
+div#orgUnitTree {
+  li {
+    position: relative;
+  }
+  a.selected {
+    &::before {
+      content: '';
+      height: 40px;
+      display: block;
+      background-color: $gray-300;
+      position: absolute;
+      left: -3000px;
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+  a {
+    &:hover {
+      background-color: transparent;
+    }
+    &.selected {
+      font-weight: normal;
+      color: $base-color!important;
+      &::before {
+        border-right: 3px solid $gray-500;
+      }
+    }
+  }
+  
+} 

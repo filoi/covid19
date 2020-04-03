@@ -1,0 +1,17 @@
+div#orgUnitTree {
+  li {
+    background-image: none;
+    font-size: $base-text-size;
+    font-weight: normal;
+    padding-left: 21px;
+    a {
+      margin-left: 4px;
+    }
+    ul {
+      li {
+        min-height: 40px;
+        line-height: 40px;
+      }
+    }
+  }
+}

@@ -441,5 +441,5 @@ textarea:read-only
     border: 1px solid #aaa;
 }
 #selectionBox.inputCriteria {
-  background-color: black;
+  /* background-color: black; */
 }

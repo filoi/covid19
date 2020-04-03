@@ -8,10 +8,9 @@ var organisationUnitList = JSON.parse( '$organisationUnits' );
 #foreach( $section in $sections )
     
     <div class="formSection sectionContainer">
-        <div>multiOrgSectionForm.vm hi</div>
         <div class="cent"><h3>$encoder.htmlEncode( $section.displayName )</h3></div>
         #set( $categoryComboIds = "null" )
-    #set( $categoryComboIds = $sectionCombos.get( $section.id ) )
+        #set( $categoryComboIds = $sectionCombos.get( $section.id ) )
 
     #foreach( $categoryComboId in $categoryComboIds )
         #set( $seCbId = "${section.id}-${categoryComboId}" )
@@ -24,7 +23,7 @@ var organisationUnitList = JSON.parse( '$organisationUnits' );
         #end
 
         #if( !$dataSet.renderHorizontally ) ## Render horizontally
-            <table  data-multiorg="true" style="margin-bottom: 20px;">
+            <table data-multiorg="true" style="margin-bottom: 20px;">
                 <tr>
                     <td>
                         <div>
@@ -43,7 +42,7 @@ var organisationUnitList = JSON.parse( '$organisationUnits' );
                                 #end
 
                                 <tr>
-                                    <td rowspan="$rowSpan"></td>
+                                    <th rowspan="$rowSpan"></th>
                                     #foreach( $dataElement in $dataElements )
                                     <th colspan="$colCount">${encoder.htmlEncode( $dataElement.displayFormName )}</th>
                                     #end
@@ -92,7 +91,7 @@ var organisationUnitList = JSON.parse( '$organisationUnits' );
                                                 #set( $disable = !$canWriteOptionCombo || $greyedField || !$hasAccess )
                                                 #if( $dataElement.valueType == "BOOLEAN" )
                                                     <td>
-                                                        <select name="entryselect" class="entryselect" id="$dataEntryId" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end>
+                                                        <select name="entryselect" class="searo-select entryselect" id="$dataEntryId" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end>
                                                             <option value="">[$i18n.getString( "no_value" )]</option>
                                                             <option value="true">$i18n.getString( "yes" )</option>
                                                             <option value="false">$i18n.getString( "no" )</option>
@@ -104,12 +103,20 @@ var organisationUnitList = JSON.parse( '$organisationUnits' );
                                                     <td><input type="time" class="entrytime" name="entrytime" id="$dataEntryId" tabindex="$tabIndex" #if( $disable ) disabled="disabled"#end/> </td>
                                                 #elseif( $dataElement.valueType == "DATETIME" )
                                                     <td>
-                                                        <input name="entryfield" class="entryfield" id="$dataEntryId" type="text" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end>
-                                                        <input type="time" class="entrytime" name="entrytime" id="${dataElement.uid}-${optionCombo.uid}-time" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end/>
+                                                        <div class="control filled">
+                                                            <input name="entryfield" class="entryfield" id="$dataEntryId" type="text" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end>
+                                                        </div>
+                                                        <div class="control filled">
+                                                            <input type="time" class="entrytime" name="entrytime" id="${dataElement.uid}-${optionCombo.uid}-time" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end/>
+                                                        </div>
                                                     </td>
                                                 #else
                                                     #if( $dataElement.optionSet )
-                                                        <td><input name="entryoptionset" class="entryoptionset" id="$dataEntryId" type="text" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end></td>
+                                                        <td>
+                                                            <div class="control filled">
+                                                                <input name="entryoptionset" class="entryoptionset" id="$dataEntryId" type="text" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end>
+                                                            </div>
+                                                        </td>
                                                     #else
                                                         <td><input name="entryfield" class="entryfield" id="$dataEntryId" type="text" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end></td>
                                                     #end
@@ -145,7 +152,7 @@ var organisationUnitList = JSON.parse( '$organisationUnits' );
                                 #end
 
                                 <tr>
-                                    <td colspan="$colSpan"></td>
+                                    <th colspan="$colSpan"></th>
                                     #foreach( $organisationUnit in $organisationUnits )
                                         <th><span align="center">${encoder.htmlEncode( $organisationUnit.displayName )}</span></th>
                                     #end
@@ -176,7 +183,7 @@ var organisationUnitList = JSON.parse( '$organisationUnits' );
                                                     #set( $greyedField = $greyedFields.get( "$dataElement.uid:$optionCombo.uid" ) )
                                                     #set( $disable = !$canWriteOptionCombo || $greyedField || !$hasAccess )
                                                     #if( $dataElement.valueType == "BOOLEAN" )
-                                                    <td><select name="entryselect" class="entryselect" id="$dataEntryId" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end>
+                                                    <td><select name="entryselect" class="searo-select entryselect" id="$dataEntryId" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end>
                                                       <option value="">[$i18n.getString( "no_value" )]</option>
                                                       <option value="true">$i18n.getString( "yes" )</option>
                                                       <option value="false">$i18n.getString( "no" )</option>
@@ -184,10 +191,18 @@ var organisationUnitList = JSON.parse( '$organisationUnits' );
                                                     #elseif( $dataElement.valueType == 'TRUE_ONLY' )
                                                         <td><input name="entrytrueonly" class="entrytrueonly" id="$dataEntryId" type="checkbox" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end></td>
                                                     #elseif( $dataElement.valueType == "TIME" )
-                                                        <td><input type="time" class="entrytime" name="entrytime" id="$dataEntryId" tabindex="$tabIndex"/> </td>
+                                                        <td>
+                                                            <div class="control filled">
+                                                                <input type="time" class="entrytime" name="entrytime" id="$dataEntryId" tabindex="$tabIndex"/>
+                                                            </div>
+                                                        </td>
                                                     #else
                                                         #if( $dataElement.optionSet )
-                                                            <td><input name="entryoptionset" class="entryoptionset" id="$dataEntryId" type="text" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end></td>
+                                                            <td>
+                                                                <div class="control filled">
+                                                                    <input name="entryoptionset" class="entryoptionset" id="$dataEntryId" type="text" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end>
+                                                                </div>
+                                                            </td>
                                                         #else
                                                             <td><input name="entryfield" class="entryfield" id="$dataEntryId" type="text" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end></td>
                                                         #end
@@ -229,7 +244,7 @@ var organisationUnitList = JSON.parse( '$organisationUnits' );
                                                     #set( $disable = !$canWriteOptionCombo || $greyedField || !$hasAccess )
                                                     #if( $dataElement.valueType == "BOOLEAN" )
                                                         <td>
-                                                            <select name="entryselect" class="entryselect" id="$dataEntryId" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end>
+                                                            <select name="entryselect" class="searo-select entryselect" id="$dataEntryId" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end>
                                                                 <option value="">[$i18n.getString( "no_value" )]</option>
                                                                 <option value="true">$i18n.getString( "yes" )</option>
                                                                 <option value="false">$i18n.getString( "no" )</option>
@@ -238,12 +253,24 @@ var organisationUnitList = JSON.parse( '$organisationUnits' );
                                                     #elseif( $dataElement.valueType == 'TRUE_ONLY' )
                                                         <td><input name="entrytrueonly" class="entrytrueonly" id="$dataEntryId" type="checkbox" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end></td>
                                                     #elseif( $dataElement.valueType == "TIME" )
-                                                        <td><input type="time" class="entrytime" name="entrytime" id="$dataEntryId" tabindex="$tabIndex"/> </td>
+                                                        <td>
+                                                            <div class="control filled">
+                                                                <input type="time" class="entrytime" name="entrytime" id="$dataEntryId" tabindex="$tabIndex"/> 
+                                                            </div>
+                                                        </td>
                                                     #else
                                                         #if( $dataElement.optionSet )
-                                                            <td><input name="entryoptionset" class="entryoptionset" id="$dataEntryId" type="text" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end></td>
+                                                            <td>
+                                                                <div class="control filled">
+                                                                    <input name="entryoptionset" class="entryoptionset" id="$dataEntryId" type="text" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end>
+                                                                </div>
+                                                            </td>
                                                         #else
-                                                            <td><input name="entryfield" class="entryfield" id="$dataEntryId" type="text" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end></td>
+                                                            <td>
+                                                                <div class="control filled">
+                                                                    <input name="entryfield" class="entryfield" id="$dataEntryId" type="text" tabindex="$tabIndex"#if( $disable ) disabled="disabled"#end>
+                                                                </div>
+                                                            </td>
                                                         #end
                                                     #end
                                                     #set( $tabIndex = $tabIndex + 1 )

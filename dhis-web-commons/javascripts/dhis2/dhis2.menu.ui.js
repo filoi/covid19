@@ -1091,7 +1091,7 @@
                     template: [
                     '<div class="header-bar" id="header">',
                         '<a ng-href="{{headerBar.link}}" title="{{headerBar.title}}" class="title-link">',
-                            '<img class="header-logo" ng-src="{{headerBar.logo}}" id="headerBanner">',
+                            '<img class="header-logo" src="../dhis-web-commons/images/who-sea-logo.png" id="headerBanner">',
                             '<span class="header-text" ng-bind="headerBar.title" id="headerText"></span>',
                         '</a>',
                         '<div id="headerMessage" class="bold"></div>',

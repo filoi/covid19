@@ -1,0 +1,33 @@
+#headerMessage, #currentSelection {
+  min-width: 120px;
+  width: auto;
+  left: 50%;
+  margin-left: -60px;
+  height: 24px;
+  line-height: 24px;
+  background-color: $blue-100;
+  color: $blue-900;
+  border-radius: 20px;
+  font-weight: normal;
+  font-size: $small-text-size;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgY3g9IjgiIGN5PSI4IiByPSI4IiBmaWxsPSIjNDE2OEU1Ii8+PGcgZmlsbD0iI0ZGRiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNyAzKSI+PHBhdGggZD0iTTAgMEgyVjZIMHoiLz48Y2lyY2xlIGN4PSIxIiBjeT0iOSIgcj0iMSIgc3Ryb2tlPSIjRkZGIi8+PC9nPjwvZz48L3N2Zz4=");
+  background-repeat: no-repeat;
+  padding: 0;
+  padding-left: 16px;
+  background-position-y: center;
+  background-position-x: 4px;
+  border: none;
+  top: 16px;
+}
+#headerMessage {
+  background-color: transparentize($blue-100, .8);
+  color: white;
+  background-image: none;
+  padding-left: 0;
+}
+#currentSelection {
+  margin: 0;
+  margin-left: 8px;
+  padding-left: 24px;
+  padding-right: 8px;
+}

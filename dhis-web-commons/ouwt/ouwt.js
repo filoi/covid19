@@ -1011,11 +1011,11 @@ function Subtree() {
     }
 
     function getToggleExpand() {
-        return getToggleImage().attr( "src", dhis2BaseUrl + "/images/colapse.png" ).attr( "alt", "[+]" );
+        return getToggleImage().attr( "src", dhis2BaseUrl + "/images/expand.svg" ).attr( "alt", "[+]" );
     }
 
     function getToggleCollapse() {
-        return getToggleImage().attr( "src", dhis2BaseUrl + "/images/expand.png" ).attr( "alt", "[-]" );
+        return getToggleImage().attr( "src", dhis2BaseUrl + "/images/colapse.svg" ).attr( "alt", "[-]" );
     }
 
     function getToggleBlank() {
@@ -1023,6 +1023,6 @@ function Subtree() {
     }
 
     function getToggleImage() {
-        return $( "<img/>" ).attr( "width", 9 ).attr( "height", 9 );
+        return $( "<img/>" ).attr( "width", 24 ).attr( "height", 24 );
     }
 }

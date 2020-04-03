@@ -1,0 +1,77 @@
+body.x-body {
+  height: calc(100% - 204px);
+}
+#mainPage.page {
+  margin: #{($header-height * 2) + 8} 0 0 $sidebar-width;
+  #moduleHeader {
+    div, h3 {
+      display: inline-block;
+    }
+    height: $header-height;
+    // font-size: $base-text-size;
+    background-color: $gray-300;
+    line-height: $header-height;
+    padding-left: 8px;
+    position: fixed;
+    top: $header-height;
+    left: $sidebar-width;
+    right: 0;
+    h3 {
+      font-size: $base-text-size;
+      font-weight: normal;
+      color: $base-color;
+      a {
+        font-size: $large-text-size;
+        margin-left: 4px;
+      }
+    }
+    #currentSelection {
+      position: static;
+    }
+  }
+  #contentDiv.page {
+    padding-left: $page-left-padding;
+    .formSection {
+      border: none;
+      padding: 0;
+      border-radius: 0;
+      h3 {
+        font-size: $large-text-size;
+        color: $base-color;
+        font-weight: 600;
+        margin-bottom: 16px;
+        text-align: left;
+      }
+    }
+  }
+  #completenessDiv.page.inputCriteria, #infoDiv {
+    padding: 0;
+    padding-left: $page-left-padding;
+    border: none;
+    border-radius: 0;
+    width: auto;
+    background-color: transparent;
+  }
+}
+#selectionBox.inputCriteria {
+  background-color: transparent;
+  border: none;
+  // max-width: 650px;
+  padding-top: 31px;
+  padding-left: $page-left-padding;
+  .selectionBoxRow {
+    .selectionLabel {
+      display: none;
+    }
+    #selectedOrganisationUnit {
+      border: none;
+      font-size: 28px;
+      font-weight: 600;
+      color: $base-color;
+      padding: 0!important;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
+}
